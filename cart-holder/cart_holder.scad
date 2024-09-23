@@ -1,7 +1,7 @@
 //Amount of cart slots
 cart_count = 4; //[1:1:8]
 //Cart type
-cart_type = 5; //[0:Snes PAL, 1:Snes NTSC, 2:N64, 3:Gameboy/GBA, 4:DS/3DS, 5:NES]
+cart_type = 5; //[0:Snes PAL, 1:Snes NTSC, 2:N64, 3:Gameboy/GBA, 4:DS/3DS, 5:NES, 6:Genesis]
 //Support leg length (mm)
 support_legs_length = 0; //[0:1:100]
 //Cart angle (degree)
@@ -95,6 +95,14 @@ module n64cart() {
     
 };
 
+module genesiscart() {
+    translate([-110/2,5,0])
+    linear_extrude(76)
+    polygon([[0,0],[0,5],[0.3,7.6],[1.18,10.2],[2.6,12.5],[4.5,14.4],[6.8,15.8],
+             [9.33,16.7],[12,17],[98,17],[100.67,16.7],[103.2,15.8],[105.5,14.4],
+             [107.4,12.5],[108.82,10.2],[109.7,7.6],[110,5],[110,0]]);
+}
+
 module cart_stand(  amount_of_carts, delta_y, delta_h, angle,
                     cup_height, cup_width, cup_depth, cart_hole_depth, support_legs_length) {
 
@@ -128,7 +136,7 @@ module cart_stand(  amount_of_carts, delta_y, delta_h, angle,
 //cart_stand(  amount_of_carts, delta_y, delta_h, angle,
 //             cup_height, cup_width, cup_depth, cart_hole_depth, support_legs_length)
 
-//cart_type: [0:Snes PAL, 1:Snes NTSC, 2:N64, 3:Gameboy/GBA, 4:DS/3DS]
+//cart_type: [0:Snes PAL, 1:Snes NTSC, 2:N64, 3:Gameboy/GBA, 4:DS/3DS, 5:NES, 6:Genesis]
 
 
 
@@ -149,4 +157,7 @@ if (cart_type == 4) {
 }
 if (cart_type == 5) {
     cart_stand(cart_count, 30, (leveled==1) ? 0 : 15, cart_angle, 45, 130, 30, 23, support_legs_length) nescart();
+}
+if (cart_type == 6) {
+    cart_stand(cart_count, 26, (leveled==1) ? 0 : 15, cart_angle, 30, 125, 26, 15, support_legs_length) genesiscart();
 }
