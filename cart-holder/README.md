@@ -4,13 +4,17 @@ These game cart stands allow you to keep your games ready to play and on display
 
 Customizer allows you to choose the cart type and the amount of carts you want to put on display.
 
-If you want to make a cart holder for just a couple of carts (like, 1 to 3), you might want to add support legs in the customizer. This will prevent the holder from falling over. Most cart types don't really need support legs, but I haven't done much testing with small numbers of carts. Please write about your experiences down in the comments!
+If you want to make a cart holder for just a couple of carts (like, 1 to 3), you might want to add support legs in the customizer. This will prevent the holder from falling over. Most cart types don't really need support legs, but I haven't done much testing with small numbers of carts.
 
-Currently supported cart types: NES, SNES (PAL), SNES (NTSC), N64, Gameboy/GBA, DS/3DS
+It is recommended to print a single leveled cart holder first to test your tolerances to make sure your game cartridges fit.
+
+Currently supported cart types: NES, SNES (PAL), SNES (NTSC), N64, Gameboy/GBA, DS/3DS, Sega Genesis
 
 SNES NTSC version possible thanks to testing by blackbird68
 
 NES version possible thanks to testing by McSwindler
+
+Sega Genesis cart support added by Aristeu Rozanski
 
 # Links
 
